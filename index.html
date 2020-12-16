@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <div class="inner">
+        <button id="button1">GENERATE MAZE</button>
+        <button id="button3">CLEAR BOARD</button>
+        <p class = "textarea">Move the <span style="color:rgb(98, 189, 98);">S</span>tart and <span style="color:rgb(207, 71, 71)">E</span>nd points around the grid. Click on empty spaces to draw walls. Choose an algorithm on the right to start the path finding visualization.</p>
+        <p class = "textarea" id="algInfo">Choose an algorithm</p>
+      </div>
+      <div  id="tablediv"></div>
+      <div class="inner">
+        <button id="button2">A* Search</button>
+        <button id="button4">Breadth First Search</button>
+        <button id="button5">Depth First Search</button>
+        <button id="button6">Best First Search</button>
+        <button id="button7">Djikstra's algorithm</button>
+        <button id="button8">Theta* search</button>
+        <button id="button9">Dynamic Weighted A* Search</button>
+        
+      </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/google/closure-library/master/closure/goog/base.js"></script>
+    <script src = "square_1.js"></script>
+    <script src="index_1.js"></script>
+  </body>
+</html>

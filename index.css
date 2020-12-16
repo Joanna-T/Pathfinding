@@ -1,0 +1,223 @@
+.textarea,
+button {
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bold;
+}
+
+.textarea {
+  color: rgb(101, 146, 214);
+  display: block;
+  max-width: 100px;
+  min-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 90%;
+}
+
+.event {
+  -webkit-touch-callout: none; /* iOS Safari supported by Chrome, Edge, Opera and Firefox */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+
+  font-family: Arial, serif;
+  font-weight: bold;
+  position: relative;
+  bottom: 4px;
+  left: 1px;
+  margin: auto;
+  width: 11px;
+  height: 11px;
+}
+
+#startPath {
+  color: rgb(82, 190, 131);
+}
+
+#endPath {
+  color: rgb(200, 100, 100);
+}
+body {
+  background-color: rgb(118, 186, 231);
+}
+
+td {
+  background-color: white;
+}
+
+#main {
+  background-color: rgb(109, 156, 134);
+  margin: 0 auto !important;
+  width: 80%;
+}
+.inner {
+  position: relative;
+  background-color: rgb(140, 231, 204);
+  border-radius: 2%;
+  float: left;
+  min-height: 500px;
+  min-width: 200px;
+  max-width: 200px;
+  margin: 10px;
+}
+
+#tablediv {
+  position: relative;
+  background-color: rgb(151, 212, 194);
+  border-radius: 2%;
+  float: left;
+  min-height: 500px;
+  min-width: 200px;
+  margin: 10px;
+}
+
+button {
+  font-size: medium;
+  text-emphasis: weight;
+  display: block;
+  max-width: 100px;
+  min-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  color: white;
+  background-color: rgb(128, 208, 240);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5%;
+}
+
+button:hover {
+  border: 2px solid rgb(36, 169, 209);
+  color: rgb(36, 169, 209);
+}
+
+.animateWhiteToBlack {
+  animation-name: whiteToBlack;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes whiteToBlack {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(72, 235, 159);
+  }
+  /*100% {background-color: white;}*/
+}
+
+.animateBlackToWhite {
+  animation-name: blackToWhite;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes blackToWhite {
+  from {
+    background-color: rgb(39, 170, 142);
+  }
+  to {
+    background-color: white;
+  }
+  /*100% {background-color: white;}*/
+}
+
+.animateDrawWall {
+  animation-name: whiteToBlack;
+  animation-duration: 50ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes drawWall {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(72, 235, 159);
+  }
+  /*100% {background-color: white;}*/
+}
+
+.animateSearch {
+  animation-name: search;
+  animation-duration: 4000ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes search {
+  0% {
+    background-color: white;
+  }
+  20% {
+    background-color: rgb(146, 230, 216);
+  }
+  40% {
+    background-color: rgb(98, 193, 206);
+  }
+  60% {
+    background-color: rgb(79, 231, 198);
+  }
+  80% {
+    background-color: rgb(173, 194, 252);
+  }
+  100% {
+    background-color: rgb(202, 180, 255);
+  }
+  /*100% {background-color: white;}*/
+}
+
+.animatePath {
+  animation-name: path;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes path {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(41, 66, 177);
+  }
+  /*100% {background-color: white;}*/
+}
+.animateParent {
+  animation-name: parent;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes parent {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(192, 235, 92);
+  }
+  /*100% {background-color: white;}*/
+}
+
+.start {
+  background-color: greenyellow;
+}
+
+.end {
+  background-color: rgb(252, 161, 161);
+}
+
+.noClick {
+  pointer-events: none;
+}
