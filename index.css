@@ -50,30 +50,28 @@ td {
 }
 
 #main {
-  background-color: rgb(109, 156, 134);
   margin: 0 auto !important;
   width: 80%;
+  text-align:center;
 }
 .inner {
-  position: relative;
   background-color: rgb(140, 231, 204);
   border-radius: 2%;
   border: 2px solid rgb(255, 255, 255);
-  float: left;
   min-height: 500px;
-  min-width: 200px;
+  min-width: 190px;
   max-width: 200px;
-  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin: auto 0.5%;
 }
 
 #tablediv {
-  position: relative;
   background-color: rgb(151, 212, 194);
   border-radius: 2%;
-  float: left;
-  min-height: 500px;
-  min-width: 200px;
-  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin: auto 0.5%;
 }
 
 button {
