@@ -17,9 +17,47 @@ white = "rgb(255,255,255)";
 //black = "rgb(200,150,200)";
 grey = "rgb(200)";
 
+$(document).ready(function () {
+  debugger;
+  console.log("RESIZE FUNCTION");
+  let windowHeight = $(window).innerHeight(); // New height
+  let windowWidth = $(window).innerWidth();
+  console.log(windowHeight, windowWidth);
+  let tempRows;
+  let tempCols;
+
+  if (windowHeight > windowWidth) {
+    tempRows = Math.floor(windowHeight / 25);
+    tempCols = Math.floor(windowWidth / 25);
+  }
+
+  if (windowHeight < windowWidth) {
+    let availableWidth = windowWidth - 500;
+    tempCols = Math.floor(availableWidth / 23);
+    tempRows = Math.floor(windowHeight / 23);
+  }
+
+  if (tempRows % 2 == 0) {
+    tempRows -= 1;
+  }
+  if (tempCols % 2 == 0) {
+    tempCols -= 1;
+  }
+  console.log(tempCols, tempRows);
+
+  numOfRows = tempRows;
+  numOfCols = tempCols;
+  let tbl = document.getElementById("tablediv");
+  tbl.innerHTML = "";
+  grid = [];
+  tableCreate();
+  createSquare(grid);
+  main();
+});
+
 function tableCreate() {
   //--------------------------------------------------------------------------------------------------------create table
-  debugger;
+  //debugger;
   var tbldiv = document.getElementById("tablediv");
   var tbl = document.createElement("table");
   tbl.setAttribute("id", "myTable");
@@ -32,7 +70,7 @@ function tableCreate() {
       td.style.position = "relative";
 
       if (i == 1 && j == 1) {
-        debugger;
+        //debugger;
         //class="event" id="item1" draggable="true"
         var spn = document.createElement("P");
 
@@ -197,7 +235,7 @@ function drawMaze(grid) {
       var resetStart = grid[1][1];
       resetStart.getCell();
 
-      var resetEnd = grid[numOfCols - 2][numOfRows - 2];
+      var resetEnd = grid[numOfRows - 2][numOfCols - 2];
       resetEnd.getCell();
 
       var spn1 = document.createElement("P");
@@ -1154,8 +1192,7 @@ function clearBoard(grid, walls) {
   });
 }
 
-tableCreate();
-createSquare(grid);
+
 
 function main() {
   $(document).ready(function () {
@@ -1209,14 +1246,8 @@ function main() {
             }
 
             $(this).toggleClass("animateDrawWall");
-            console.log(
-              "clicked cell at: " +
-                this.cellIndex +
-                ", " +
-                this.parentNode.rowIndex
-            );
             toggleWall(row1, col1);
-            console.log("final colour", grid[row1][col1].colour);
+            
 
             return false; // prevent text selection
           }
@@ -1235,16 +1266,7 @@ function main() {
               var maze1 = $(this).hasClass("animateWhiteToBlack");
               var mazePath1 = $(this).hasClass("animateBlackToWhite");
               var parent = $(this).hasClass("animateParent");
-              console.log(
-                "animatesearch",
-                search1,
-                "path",
-                path1,
-                "mazewall",
-                maze1,
-                "mazePath",
-                mazePath1
-              );
+              
 
               if (search1 || path1 || maze1 || mazePath1 || parent) {
                 $(this).removeClass();
@@ -1254,12 +1276,7 @@ function main() {
               }
 
               $(this).toggleClass("animateDrawWall");
-              console.log(
-                "clicked cell at: " +
-                  this.cellIndex +
-                  ", " +
-                  this.parentNode.rowIndex
-              );
+              
 
               toggleWall(row, col);
             }
@@ -1284,11 +1301,11 @@ function main() {
         var col = this.cellIndex;
         if ($(this).children("#startPath").length > 0) {
           $(this).removeClass();
-          console.log(row, col);
+          
 
           grid[row][col].getCell();
           grid[row][col].cell.setAttribute("class", "startCell");
-          console.log("classliststart", grid[row][col].cell.classList);
+          
           startSquarePath = grid[row][col];
         }
         if ($(this).children("#endPath").length > 0) {
@@ -1303,15 +1320,15 @@ function main() {
     }
 
     $(document).on("mousedown", ".event", function (event) {
-      console.log("mousedown on event");
+      //console.log("mousedown on event");
       selected = $(this);
       start = selected.hasClass("startPath");
-      console.log(selected);
+      //console.log(selected);
       dragging = true;
     });
 
     $(window).on("mouseup", function (event) {
-      console.log("mouseup");
+      //console.log("mouseup");
       selected = null;
       dragging = false;
       findSE();
@@ -1450,7 +1467,9 @@ function main() {
   };
 }
 
-main();
+//tableCreate();
+//createSquare(grid);
+//main();
 
 /*
 - e getting path animation
