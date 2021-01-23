@@ -56,8 +56,6 @@ $(document).ready(function () {
 });
 
 function tableCreate() {
-  //--------------------------------------------------------------------------------------------------------create table
-  //debugger;
   var tbldiv = document.getElementById("tablediv");
   var tbl = document.createElement("table");
   tbl.setAttribute("id", "myTable");
@@ -365,7 +363,7 @@ function aStarSearch(grid, diagonal) {
       clearInterval(intr);
     } else if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,30);
       clearInterval(intr);
     }
   }, 10); //end while loop
@@ -435,7 +433,7 @@ function breadthFirstSearch(grid, diagonal) {
       clearInterval(intr);
     } else if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,30);
       clearInterval(intr);
     }
   }, 10);
@@ -509,7 +507,7 @@ function depthFirstSearch(grid, diagonal) {
 
     if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,10);
       clearInterval(intr);
     }
 
@@ -611,7 +609,7 @@ function greedyBestFirstSearch(grid, diagonal) {
       clearInterval(intr);
     } else if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,30);
       clearInterval(intr);
     }
   }, 10); //end while loop
@@ -726,7 +724,7 @@ function djikstra(grid, diagonal) {
       clearInterval(intr);
     } else if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,30);
       clearInterval(intr);
     }
   }, 10); //end while loop
@@ -1097,7 +1095,7 @@ function weightedAStarSearch(grid, diagonal) {
       clearInterval(intr);
     } else if (current === endSquarePath) {
       debugger;
-      findPath(cameFrom, current);
+      findPath(cameFrom, current,30);
       clearInterval(intr);
     }
   }, 10); //end while loop
@@ -1123,7 +1121,7 @@ function heuristic(name, cell, endSquare) {
   return ans;
 }
 
-function findPath(cameFrom, current) {
+function findPath(cameFrom, current, time) {
   var intr1 = setInterval(function () {
     if (current !== startSquarePath) {
       console.log("currentpath", current.row, current.col);
@@ -1139,7 +1137,7 @@ function findPath(cameFrom, current) {
       //running = False;
       clearInterval(intr1);
     }
-  }, 30);
+  }, time);
 }
 
 function disableButton(bool) {
