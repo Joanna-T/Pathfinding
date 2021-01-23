@@ -210,11 +210,11 @@ button:hover {
 }
 
 .start {
-  background-color: greenyellow;
+  /*background-color: greenyellow;*/
 }
 
 .end {
-  background-color: rgb(252, 161, 161);
+  /*background-color: rgb(252, 161, 161);*/
 }
 
 .noClick {
